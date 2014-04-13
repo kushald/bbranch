@@ -1,0 +1,24 @@
+<table class="table table-striped">
+	<tr>
+		<th>bank</th>
+		<th>state</th>
+		<th>district</th>
+		<th>center</th>
+		<th>region</th>
+		<th>branch</th>
+		<th>population_group</th>
+		<th>address</th>
+	</tr>
+	<% @banks.each do |bank| %>
+		<tr>
+			<td><%= bank.bank %></td>
+			<td><%= bank.state %></td>
+			<td><%= bank.district %></td>
+			<td><%= bank.center %></td>
+			<td><%= bank.region %></td>
+			<td><%= bank.branch %></td>
+			<td><%= bank.population_group %></td>
+			<td><%= bank.address %></td>
+		</tr>
+	<% end %>
+</table>
