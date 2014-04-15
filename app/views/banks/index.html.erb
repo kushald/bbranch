@@ -11,7 +11,7 @@
 		</div>
 		<div class="col-md-6 search-form">
 
-			<legend>Search by XYZ</legend>
+			<legend>Search come on Search</legend>
 			<form role="form">
 				<div class="form-group">
 					<select name="bank_id" class="selectpicker" id="bankList">
@@ -85,31 +85,34 @@
 		</div>
 		<div class="col-md-3">
 		</div>
-
-		<div class="col-md-12">
-			<table class="table table-striped">
-				<tr>
-					<th>bank</th>
-					<th>state</th>
-					<th>district</th>
-					<th>center</th>
-					<th>region</th>
-					<th>branch</th>
-					<th>population_group</th>
-					<th>address</th>
-				</tr>
-				<% @banks.each do |bank| %>
+		<% if @banks %>
+			<div class="col-md-12">
+				<table class="table table-striped">
 					<tr>
-						<td><%= bank.bank %></td>
-						<td><%= bank.state %></td>
-						<td><%= bank.district %></td>
-						<td><%= bank.center %></td>
-						<td><%= bank.region %></td>
-						<td><%= bank.branch %></td>
-						<td><%= bank.population_group %></td>
-						<td><%= bank.address %></td>
+						<th>bank</th>
+						<th>state</th>
+						<th>district</th>
+						<th>center</th>
+						<th>region</th>
+						<th>branch</th>
+						<th>population_group</th>
+						<th>address</th>
 					</tr>
-				<% end %>
-			</table>
-		</div>
+					<% @banks.each do |bank| %>
+						<tr>
+							<td><%= bank.bank %></td>
+							<td><%= bank.state %></td>
+							<td><%= bank.district %></td>
+							<td><%= bank.center %></td>
+							<td><%= bank.region %></td>
+							<td><%= bank.branch %></td>
+							<td><%= bank.population_group %></td>
+							<td><%= bank.address %></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		<% else %>
+			<h4>I Could Not find what you are looking for. Feed me more Data please i'm starving!</h4>
+		<% end%>
 </div>
