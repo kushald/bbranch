@@ -112,7 +112,7 @@
 					<% end %>
 				</table>
 			</div>
-		<% else %>
+		<% elsif params[:bank].present? || params[:district].present? || params[:state].present? %>
 			<h4>I Could Not find what you are looking for. Feed me more Data please i'm starving!</h4>
 		<% end%>
 </div>
