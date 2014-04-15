@@ -1,24 +1,115 @@
-<table class="table table-striped">
-	<tr>
-		<th>bank</th>
-		<th>state</th>
-		<th>district</th>
-		<th>center</th>
-		<th>region</th>
-		<th>branch</th>
-		<th>population_group</th>
-		<th>address</th>
-	</tr>
-	<% @banks.each do |bank| %>
-		<tr>
-			<td><%= bank.bank %></td>
-			<td><%= bank.state %></td>
-			<td><%= bank.district %></td>
-			<td><%= bank.center %></td>
-			<td><%= bank.region %></td>
-			<td><%= bank.branch %></td>
-			<td><%= bank.population_group %></td>
-			<td><%= bank.address %></td>
-		</tr>
-	<% end %>
-</table>
+<nav class="navbar-wrapper navbar-default" role="navigation">
+	<div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">BANK BABY BANK</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6 search-form">
+
+			<legend>Search by XYZ</legend>
+			<form role="form">
+				<div class="form-group">
+					<select name="bank_id" class="selectpicker" id="bankList">
+						<option value="" class="bankSearchSelectHead">-- Select Bank --</option>
+						<optgroup label="&nbsp;Major Banks">
+							<option value="ICICI BANK LIMITED">&nbsp;&nbsp;ICICI BANK</option>
+							<option value="5">&nbsp;&nbsp;Axis Bank</option>
+							<option value="6">&nbsp;&nbsp;Bank Of America</option>
+							<option value="8">&nbsp;&nbsp;Bank Of Baroda</option>
+							<option value="10">&nbsp;&nbsp;Bank Of India</option>
+							<option value="17">&nbsp;&nbsp;Canara Bank</option>
+							<option value="18">&nbsp;&nbsp;Catholic Syrian Bank</option>
+							<option value="19">&nbsp;&nbsp;Central Bank Of India</option>
+							<option value="21">&nbsp;&nbsp;Citibank</option>
+						</optgroup>
+						<optgroup label="&nbsp;Other Banks">
+							<option value="1">&nbsp;&nbsp;Abhyudaya Co-operative Bank</option>
+							<option value="2">&nbsp;&nbsp;Abu Dhabi Commercial Bank</option>
+							<option value="3">&nbsp;&nbsp;Allahabad Bank</option>
+							<option value="4">&nbsp;&nbsp;Andhra Bank</option>
+							<option value="7">&nbsp;&nbsp;Bank Of Bahrain And Kuwait</option>
+							<option value="9">&nbsp;&nbsp;Bank Of Ceylon</option>
+							<option value="11">&nbsp;&nbsp;Bank Of Maharashtra</option>
+							<option value="63">&nbsp;&nbsp;Bank Of Rajasthan </option>
+							<option value="12">&nbsp;&nbsp;Bank Of Tokyo-Mitsubishi UFJ</option>
+							<option value="13">&nbsp;&nbsp;Barclays Bank PLC</option>
+							<option value="14">&nbsp;&nbsp;Bassein Catholic Co-op Bank</option>
+							<option value="64">&nbsp;&nbsp;Bharat Co-op Bank </option>
+							<option value="15">&nbsp;&nbsp;BNP Paribas</option>
+							<option value="16">&nbsp;&nbsp;Calyon Bank</option>
+						</optgroup>
+					</select>
+					</div>
+					<div class="form-group">
+						<select name="state" class="selectpicker" id="stateList">
+				    	<option value="">-- Select State --</option>
+				    	<option value="MAHARASHTRA">&nbsp;&nbsp;MAHARASHTRA</option>
+				    	<option value="Assam">&nbsp;&nbsp;Assam</option>
+				    	<option value="Andaman and Nicobar Islands">&nbsp;&nbsp;Andaman and Nicobar Islands</option>
+				    	<option value="Andhra Pradesh">&nbsp;&nbsp;Andhra Pradesh</option>
+				    	<option value="Arunachal Pradesh">&nbsp;&nbsp;Arunachal Pradesh</option>
+				    	<option value="Assam">&nbsp;&nbsp;Assam</option><option value="Bihar">&nbsp;&nbsp;Bihar</option>
+				    	<option value="Chandigarh">&nbsp;&nbsp;Chandigarh</option>
+				    	<option value="Chhattisgarh">&nbsp;&nbsp;Chhattisgarh</option>\
+				    	<option value="Dadra and Nagar Haveli">&nbsp;&nbsp;Dadra and Nagar Haveli</option>
+				    	<option value="Daman and Diu">&nbsp;&nbsp;Daman and Diu</option>
+				    	<option value="Delhi">&nbsp;&nbsp;Delhi</option>
+				    	<option value="Goa">&nbsp;&nbsp;Goa</option>
+				    	<option value="Gujarat">&nbsp;&nbsp;Gujarat</option>
+				    	<option value="Haryana">&nbsp;&nbsp;Haryana</option>
+				    	<option value="Himachal Pradesh">&nbsp;&nbsp;Himachal Pradesh</option>
+				    </select>
+				  </div>
+				  <div class="form-group">
+				    <select name="district" class="selectpicker" id="districtList">
+			      	<option value="">-- Select District --</option>
+			      	<option value="PUNE">&nbsp;&nbsp;Pune</option>
+			      	<option value="Bagalkot">&nbsp;&nbsp;Bagalkot</option>
+			      	<option value="Bangalore Rural">&nbsp;&nbsp;Bangalore Rural</option>
+			      	<option value="Bangalore Urban">&nbsp;&nbsp;Bangalore Urban</option>
+			      	<option value="Belgaum">&nbsp;&nbsp;Belgaum</option>
+			      	<option value="Bellary">&nbsp;&nbsp;Bellary</option>
+			      	<option value="Bidar">&nbsp;&nbsp;Bidar</option>
+			      	<option value="Bijapur">&nbsp;&nbsp;Bijapur</option>
+			      </select>
+			    </div>
+			    <div class="form-group">
+						<button type="submit" class="btn search-btn">Search</button>
+					</div>
+			</form>
+		</div>
+		<div class="col-md-3">
+		</div>
+
+		<div class="col-md-12">
+			<table class="table table-striped">
+				<tr>
+					<th>bank</th>
+					<th>state</th>
+					<th>district</th>
+					<th>center</th>
+					<th>region</th>
+					<th>branch</th>
+					<th>population_group</th>
+					<th>address</th>
+				</tr>
+				<% @banks.each do |bank| %>
+					<tr>
+						<td><%= bank.bank %></td>
+						<td><%= bank.state %></td>
+						<td><%= bank.district %></td>
+						<td><%= bank.center %></td>
+						<td><%= bank.region %></td>
+						<td><%= bank.branch %></td>
+						<td><%= bank.population_group %></td>
+						<td><%= bank.address %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+</div>

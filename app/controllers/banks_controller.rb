@@ -1,5 +1,5 @@
 class BanksController < ApplicationController
 	def index
-		@banks = Bank.all
+		@banks = Bank.where("state=? || bank=? || district=?", params[:state], params[:bank], params[:district])
 	end
 end
