@@ -3,8 +3,8 @@ Bbranch::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :banks
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  root 'banks#index'
+  #get 'ifsc/:state/:district' => 'banks#test'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
