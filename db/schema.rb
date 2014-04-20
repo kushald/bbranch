@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413073924) do
+ActiveRecord::Schema.define(version: 20140419182349) do
 
   create_table "banks", force: true do |t|
     t.string   "serial_no"
@@ -31,6 +31,31 @@ ActiveRecord::Schema.define(version: 20140413073924) do
     t.string   "licence_date"
     t.text     "address"
     t.string   "branch_office"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ifscs", force: true do |t|
+    t.string   "name"
+    t.string   "ifsc"
+    t.string   "micr"
+    t.string   "branch"
+    t.text     "address"
+    t.string   "contact"
+    t.string   "city"
+    t.string   "district"
+    t.string   "string"
+    t.string   "state"
+    t.integer  "neft_bank_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ifscs", ["ifsc"], name: "index_ifscs_on_ifsc", unique: true, using: :btree
+
+  create_table "neft_banks", force: true do |t|
+    t.string   "name"
+    t.string   "display_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

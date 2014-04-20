@@ -4,11 +4,15 @@ body {
 }
 
 a {
-	color: #2ecc71;
+	font-size: 16px;
+	color: #777;
+	text-decoration: underline;
+	color: #428BCA;
 }
 
 a:hover {
-	color: #27AE60;
+	font-weight: bold;
+	color: #428BCA;
 	text-decoration: none;
 }
 
@@ -55,6 +59,19 @@ a:hover {
 	
 }
 
+.navbar-default {
+	background: #2980b9;
+}
+
+.navbar-default a {
+	text-decoration: none;
+	font-size: 24px;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+}
+
 textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
   border-color: #27AE60;
   box-shadow: 0 1px 1px rgba(50,205,50, 0.075) inset, 0 0 8px rgba(50,205,50, 0.6);
@@ -63,6 +80,16 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 
 .well {
 	background: white;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+	background: #CFE9F7;
+}
+
+.tags {
+	padding: 10px;
+	color: #777;
+	background: #CFE9F7;
 }
 
 @media screen and (max-width: 800px) {
