@@ -91,7 +91,7 @@ end
 
 desc "Read data from CSV into Ifsc table"
 task :load_ifsc_code => :environment do
-	neft = NeftBank.all.limit 10
+	#neft = NeftBank.all.limit 10
 	begin
    # neft.each do |bank|
    # 	p bank.name
@@ -113,27 +113,28 @@ task :load_ifsc_code => :environment do
    # 	#libreoffice --headless --convert-to csv --outdir ~/workspace/ruby/rbi/ *.xls
    # 	end
 
-  	file = CSV.read("/home/kushal/Desktop/IFCB2009_05.xlsx")
+  	file = CSV.read("/home/kushal/Documents/KUSHAL/IFCB2009_04.csv")
+  	binding.pry
   	file[1..-1].each do |row|
-	  	Ifsc.create!(
-												:name => row[0],
-									      :ifsc => row[1],
-									      :micr => row[2],
-									      :branch => row[3],
-									      :address => row[4],
-									      :contact => row[5],
-									      :city => row[6],
-									      :district => row[7],
-									      :state => row[8],
-									      :neft_bank_id => 5
-											)
+	  	# Ifsc.create!(
+				# 								:name => row[0],
+				# 					      :ifsc => row[1],
+				# 					      :micr => row[2],
+				# 					      :branch => row[3],
+				# 					      :address => row[4],
+				# 					      :contact => row[5],
+				# 					      :city => row[6],
+				# 					      :district => row[7],
+				# 					      :state => row[8],
+				# 					      :neft_bank_id => 5
+				# 							)
    end
 	end
 end
 
 desc "load ifsc via xlxs"
 task :load_ifsc_xlxs => :environment do
-	branches = Roo::Excelx.new("/home/kushal/Desktop/IFCB2009_05.xlsx")
+	branches = Roo::Excelx.new("/home/kushal/workspace/ruby/rbi/#{ENV['name']}.xlsx")
 	
 		branches.each_with_index do |b,i|
 			unless i == 0
@@ -147,7 +148,7 @@ task :load_ifsc_xlxs => :environment do
 								      :city => b[6],
 								      :district => b[7],
 								      :state => b[8],
-								      :neft_bank_id => 10
+								      :neft_bank_id => ENV['bid']
 										)
 				p "=======================#{i}=============================================="
 			end

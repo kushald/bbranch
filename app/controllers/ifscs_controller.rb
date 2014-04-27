@@ -1,7 +1,7 @@
 class IfscsController < ApplicationController
   def index
-  	redirect_to "/ifsc/axis_bank"
-  	@bank_names = NeftBank.limit(10).collect(&:name)
+  	#@bank_names = NeftBank.limit(10).collect(&:name)
+  	Ifsc.group(:name).collect(&:name)
   end
 
   def search_by_name
