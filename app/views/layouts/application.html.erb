@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bbranch</title>
+  <title><%= yield(:title) %></title>
+  <meta name="Author" content="Kushal Dongre"/>
+  <meta name="DESCRIPTION" content="<%= meta_description %>"/> 
+  <meta name="KEYWORDS" content="<%= meta_keywords %>"/> 
+  <meta name="ROBOTS" content="ALL"/>
+  <meta charset="utf-8" />
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
