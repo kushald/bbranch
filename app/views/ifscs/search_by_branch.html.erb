@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<h2 style="text-align: center;color: #72BCE8;">IFSC CODE - <%= @branch.name %></h2>
+		<% if @branch.present? %>
+			<div class="col-md-12">
+				<table class="table table-striped" border="2">
+					<tr>
+						<th>bank</th>
+						<td><%= @branch.name %></td>
+					</tr>
+					<tr>
+						<th>IFSC</th>
+						<td><b><%= @branch.ifsc %></b></td>
+					</tr>
+					<tr>
+						<th>MICR</th>
+						<td><%= @branch.micr.to_i %></td>
+					</tr>
+					<tr>
+						<th>BRANCH</th>
+						<td><%= @branch.branch %></td>
+					</tr>
+					<tr>
+						<th>ADDRESS</th>
+						<td><%= @branch.address %></td>
+					</tr>
+					<tr>
+						<th>STATE</th>
+						<td><%= @branch.state %></td>
+					</tr>
+					<tr>
+						<th>DISTRICT</th>
+						<td><%= @branch.district %></td>
+					</tr>
+				</table>
+			</div>
+		<% end%>
+	</div>
+</div>
