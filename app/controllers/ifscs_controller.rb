@@ -26,12 +26,29 @@ class IfscsController < ApplicationController
   end
 
   def search_by_branch
+  	if valid_bank_name(params[:bank_name]) && valid_state_name?(params[:bank_name], params[:state]) && valid_district_name?(params[:bank_name], params[:state], params[:district]) 
+  		@branch = get_by_branch(params[:bank_name], params[:state], params[:district], params[:branch])
+  		return
+  	end
+  	redirect_to '/'
   end
 
   private
 
   def valid_bank_name(name)
   	NeftBank.all_banks(params[:bank_name].gsub("_",' '))
+  end
+
+  def valid_state_name?(bank, state)
+  	Ifsc.where("name like ? and state = ?", "%bank%", state).present?
+  end
+
+  def valid_district_name?(bank, state, district)
+  	Ifsc.where("name like ? and state = ? and district = ?", "%#{bank}%", state, district).present?
+  end
+
+  def get_by_branch(bank, state, district, branch)
+  	Ifsc.where("name like ? and state = ? and district = ? and branch = ?", "%#{bank}%", state, district, branch).first
   end
 
   def bank_name(name)
