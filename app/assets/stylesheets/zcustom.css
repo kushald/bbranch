@@ -6,7 +6,7 @@ body {
 a {
 	font-size: 16px;
 	color: #777;
-	text-decoration: underline;
+	text-decoration: none;
 	color: #428BCA;
 }
 
@@ -90,6 +90,11 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 	padding: 10px;
 	color: #777;
 	background: #CFE9F7;
+}
+
+.page {
+	margin: 10px;
+	font-size: 18px;
 }
 
 @media screen and (max-width: 800px) {

@@ -1,3 +1,7 @@
+<% bank_name = @branches.first.name %>
+<h1><%=h content_for(:title, "#{bank_name.upcase} #{@branches.first.state} IFSC CODE") %></h1>
+<% meta_description "#{bank_name} #{@branches.first.state}, #{bank_name} IFSC, #{bank_name} MICR, #{bank_name} BRANCH ADDRESS, #{bank_name} CONTACT, #{bank_name} NEFT, #{bank_name} RTGS" %>
+<% meta_keywords "#{bank_name} #{@branches.first.state}, #{bank_name} IFSC, #{bank_name} MICR, #{bank_name} BRANCH ADDRESS, #{bank_name} CONTACT, #{bank_name} NEFT, #{bank_name} RTGS" %>
 <div class="container">
 	<div class="row">
 			<div class="col-md-12">
@@ -29,7 +33,9 @@
 							<td><%= branch.name %></td>
 							<td><%= branch.ifsc %></td>
 							<td><%= branch.micr %></td>
-							<td><%= branch.branch %></td>
+							<td>
+								<a href="<%= branch_url(branch.name, branch.state, branch.district, branch.branch) %>"><%= branch.branch %></a>
+							</td>
 							<td><%= branch.address %></td>
 							<td><%= branch.state %></td>
 							<td><%= branch.district %></td>

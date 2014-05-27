@@ -1,3 +1,7 @@
+<% bank_name = @branches.first.name %>
+<h1><%=h content_for(:title, "#{bank_name.upcase} IFSC CODE") %></h1>
+<% meta_description "#{bank_name}, #{bank_name} IFSC, #{bank_name} MICR, #{bank_name} BRANCH ADDRESS, #{bank_name} CONTACT, #{bank_name} NEFT, #{bank_name} RTGS" %>
+<% meta_keywords "#{bank_name}, #{bank_name} IFSC, #{bank_name} MICR, #{bank_name} BRANCH ADDRESS, #{bank_name} CONTACT, #{bank_name} NEFT, #{bank_name} RTGS" %>
 <div class="container">
 	<div class="container">
 		<div class="row">
@@ -23,18 +27,24 @@
 						<th>MICR</th>
 						<th>BRANCH</th>
 						<th>ADDRESS</th>
-						<th>STATE</th>
+						<th>CONTACT</th>
+						<th>CITY</th>
 						<th>DISTRICT</th>
+						<th>STATE</th>
 					</tr>
 					<% @branches.each do |branch| %>
 						<tr>
 							<td><%= branch.name %></td>
 							<td><%= branch.ifsc %></td>
 							<td><%= branch.micr %></td>
-							<td><%= branch.branch %></td>
+							<td>
+								<a href="<%= branch_url(branch.name, branch.state, branch.district, branch.branch) %>"><%= branch.branch %></a>
+							</td>
 							<td><%= branch.address %></td>
-							<td><%= branch.state %></td>
+							<td><%= branch.contact %></td>
+							<td><%= branch.city %></td>
 							<td><%= branch.district %></td>
+							<td><%= branch.state %></td>
 						</tr>
 					<% end %>
 				</table>

@@ -14,4 +14,8 @@ module ApplicationHelper
       content_for?(:meta_description) ? content_for(:meta_description) : APP_CONFIG['meta_description']
     end
   end
+
+  def branch_url(bank, state, district, branch)
+  	"/ifsc/#{bank}/#{state}/#{district}/#{branch}"
+  end
 end

@@ -1,3 +1,7 @@
+<% bank_name = @branch.name %>
+<h1><%=h content_for(:title, "#{@branch.name.upcase}, #{@branch.city}, #{@branch.district}, #{@branch.state}, #{@branch.ifsc} IFSC CODE") %></h1>
+<% meta_description "#{bank_name} #{@branch.district} #{@branch.state}, #{bank_name} IFSC, #{bank_name} MICR, #{bank_name} BRANCH ADDRESS, #{bank_name} CONTACT, #{bank_name} NEFT, #{bank_name} RTGS" %>
+<% meta_keywords "#{bank_name} #{@branch.district} #{@branch.state}, #{bank_name} IFSC, #{bank_name} MICR, #{bank_name} BRANCH ADDRESS, #{bank_name} CONTACT, #{bank_name} NEFT, #{bank_name} RTGS" %>
 <div class="container">
 	<div class="row">
 		<h2 style="text-align: center;color: #72BCE8;">IFSC CODE - <%= @branch.name %></h2>
@@ -25,12 +29,20 @@
 						<td><%= @branch.address %></td>
 					</tr>
 					<tr>
-						<th>STATE</th>
-						<td><%= @branch.state %></td>
+						<th>CONTACT</th>
+						<td><%= @branch.contact %></td>
+					</tr>
+					<tr>
+						<th>CITY</th>
+						<td><%= @branch.city %></td>
 					</tr>
 					<tr>
 						<th>DISTRICT</th>
 						<td><%= @branch.district %></td>
+					</tr>
+					<tr>
+						<th>STATE</th>
+						<td><%= @branch.state %></td>
 					</tr>
 				</table>
 			</div>
