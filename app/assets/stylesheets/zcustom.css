@@ -21,6 +21,10 @@ a:hover {
   margin: 0 auto;
 }
 
+.td_micr {
+	width: 10%;
+}
+
 .right {
 	float: right;
 }

@@ -32,7 +32,7 @@
 						<tr>
 							<td><%= branch.name %></td>
 							<td><%= branch.ifsc %></td>
-							<td><%= branch.micr %></td>
+							<td class="td_micr"><%= branch.micr %></td>
 							<td>
 								<a href="<%= branch_url(branch.name, branch.state, branch.district, branch.branch) %>"><%= branch.branch %></a>
 							</td>
