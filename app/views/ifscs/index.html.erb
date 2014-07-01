@@ -3,10 +3,10 @@
 <h1><%=h content_for(:title, "IFSCWALA - IFSC Bank Code") %></h1>
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
-			<% @bank_names.each do |bank| %>
-				<p><a href="/ifsc/<%= bank.gsub(" ","_") %>"><%= bank.upcase %></a></p>
-			<% end %>
-		</div>
+		<% @bank_names.each do |bank| %>
+			<div class="col-md-4 all-list">
+				<a href="/ifsc/<%= bank.gsub(" ","_") %>"><%= bank.upcase %></a>
+			</div>
+		<% end %>
 	</div>
 </div>

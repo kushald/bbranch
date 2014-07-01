@@ -1,108 +1,44 @@
-@import url(http://fonts.googleapis.com/css?family=News+Cycle);
 body {
-  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	color: #3E3B66;	
 }
-
-a {
-	font-size: 16px;
-	color: #777;
-	text-decoration: none;
-	color: #428BCA;
+.navbar-inverse {
+	background-color: #523054;
+	border-color: #523054;
 }
-
-a:hover {
-	font-weight: bold;
-	color: #428BCA;
-	text-decoration: none;
+.navbar-inverse {
+	background-color: #523054;
+	border-color: #523054;
 }
-
-.centered {
-  float: none;
-  margin: 0 auto;
+.navbar-inverse2 {
+	background-color: #664666;
+	border-color: #664666;
 }
-
-.td_micr {
-	width: 10%;
-}
-
-.right {
-	float: right;
-}
-
-.margin-1 {
-	margin: 0.5%;
-}
-
-.margin-reset {
-	margin: 3% 3% 4% 11%;
-}
-
 .navbar {
-  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
-  font-size: 14px;
-  font-weight: normal;
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+.navbar-header {
+  float: left;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+.navbar-brand {float:none;}
+.navbar-inverse .navbar-brand {
+	color: #fff;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
-  background: #27AE60;
-  color: #fff;
-}
-
-.navbar > .container .navbar-brand {
-	background: #27ae60;
-	color: white;
-}
-.srch-inp {
-	float: right;
-	padding: 0;
-	margin-bottom: 0.3%;
-}
-
-#nprogress .bar {
-	background: #27AE60;
-	
-}
-
-.navbar-default {
-	background: #2980b9;
-}
-
-.navbar-default a {
-	text-decoration: none;
-	font-size: 24px;
-}
-
-.navbar-default .navbar-brand {
-	color: white;
-}
-
-textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
-  border-color: #27AE60;
-  box-shadow: 0 1px 1px rgba(50,205,50, 0.075) inset, 0 0 8px rgba(50,205,50, 0.6);
-  outline: 0 none;
-}
-
-.well {
-	background: white;
-}
-
-.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
-	background: #CFE9F7;
-}
-
-.tags {
+.all-list a {
+	display: block;
+	color: #3E3B66;
+	line-height: 18px;
+	height: 46px;
 	padding: 10px;
-	color: #777;
-	background: #CFE9F7;
+	border-radius: 4px;
 }
 
-.page {
-	margin: 10px;
-	font-size: 18px;
-}
-
-@media screen and (max-width: 800px) {
-	#map {
-		display: none;
-	}
+.all-list a:hover {
+border: 1px solid #523054;
+text-decoration: none;
 }
